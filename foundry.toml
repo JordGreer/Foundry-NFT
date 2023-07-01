@@ -3,5 +3,11 @@ src = "src"
 out = "out"
 libs = ["lib"]
 remappings = ["@openzeppelin/contracts=lib/openzeppelin-contracts/contracts"]
+
+#This is less safe than setting fs_permissions because it grants the whole shell
 ffi = true
+
+#Safer to use foundry to read a specific directory here instead of ffi.
+fs_permissions = [{access = "read", path = "./img/"}]
+
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
